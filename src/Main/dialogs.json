@@ -1,0 +1,40 @@
+[
+    {
+	    "username": "darthvader",
+	    "name": "Darth Vader",
+	    "phoneNumber": "+375290000000",
+	    "image": "https://plamoya.com/bmz_cache/6/68b4c262199124941280f57f771ee79f.image.500x500.jpg",
+        "dialog" :
+        [
+        	{
+        		"id": "2893eudsjakd",
+        		"text": "hello!",
+        		"time": "00:00"
+            },
+
+        	{
+        		"id": "2fgfgeudsjakd",
+        		"text": "hello!",
+        		"time": "00:00"
+            }
+        ]
+    },
+    {
+	    "username": "princess_leia",
+	    "name": "Princess Leia",
+	    "phoneNumber": "+375290000111",
+	    "image": "https://cdn.shopify.com/s/files/1/0018/8488/0957/products/Princess_Leia_grande.jpg?v=1527062625"
+    },
+    {
+	    "username": "luke_skywalker",
+	    "name": "Luke Skywalker",
+	    "phoneNumber": "+375290000222",
+	    "image": "https://www.filmstaroutfits.com/image/cache/catalog/mens%20jackets/return-of-the-jedi-luke-skywalker-black-jacket-2-500x500.jpg"
+    },
+    {
+	    "username": "chewbacca",
+	    "name": "Chewbacca",
+	    "phoneNumber": "+375296666111",
+	    "image": "https://i.pinimg.com/originals/f5/ad/b4/f5adb4f87abbb31fc43b9ccc4146da53.jpg"
+    } 
+]
