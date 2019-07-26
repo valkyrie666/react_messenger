@@ -1,13 +1,1231 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+html, body {
+    height: 98%;
+    font-family: "Helvetica" sans-serif;
+    font: 400 15px/1.8;
+    background: #e8e8e8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    box-sizing:border-box;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    border-width:1px 1px 1px 2px;
+    border-color: #777;
+    background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    border-width: 1px 1px 1px 2px;
+    border-color: #555;
+    background-color: #777;
+}
+
+::-webkit-scrollbar-track{
+    border-width:0;
+}
+
+::-webkit-scrollbar-track:hover{
+    border-left: solid 1px #aaa;
+    background-color: #eee;
+}
+
+/* Flex */
+
+.Row, .RowRevers, .Column, .ColumnRevers {
+    display: flex;
+} 
+
+.Row {
+    flex-direction: row;
+}
+
+.RowRevers {
+    flex-direction: row-reverse;
+}
+
+.Column {
+    flex-direction: column;
+}
+
+.ColumnRevers {
+    flex-direction: column-reverse;
+}
+
+.Column-1, .Column-2, .Column-3, .Column-4, .Column-5,
+.Column-6, .Column-7, .Column-8, .Column-9, .Column-10,
+.Column-11, .Column-12,
+.ColumnBig-1, .ColumnBig-2, .ColumnBig-3, .ColumnBig-4, .ColumnBig-5,
+.ColumnBig-6, .ColumnBig-7, .ColumnBig-8, .ColumnBig-9, .ColumnBig-10,
+.ColumnBig-11, .ColumnBig-12,
+.ColumnMedium-1, .ColumnMedium-2, .ColumnMedium-3, .ColumnMedium-4, .ColumnMedium-5,
+.ColumnMedium-6, .ColumnMedium-7, .ColumnMedium-8, .ColumnMedium-9, .ColumnMedium-10,
+.ColumnMedium-11, .ColumnMedium-12, 
+.ColumnSmall-1, .ColumnSmall-2, .ColumnSmall-3, .ColumnSmall-4, .ColumnSmall-5,
+.ColumnSmall-6, .ColumnSmall-7, .ColumnSmall-8, .ColumnSmall-9, .ColumnSmall-10,
+.ColumnSmall-11, .ColumnSmall-12,
+.ColumnTiny-1, .ColumnTiny-2, .ColumnTiny-3, .ColumnTiny-4, .ColumnTiny-5,
+.ColumnTiny-6, .ColumnTiny-7, .ColumnTiny-8, .ColumnTiny-9, .ColumnTiny-10,
+.ColumnTiny-11, .ColumnTiny-12 {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.Column-1 {
+    width: 8.33333333%;
+}
+
+.Column-2 {
+    width: 16.666%;
+}
+
+.Column-3 {
+    width: 25%
+}
+
+.Column-4 {
+    width: 33.333%;
+}
+
+.Column-6 {
+    width: 50%; /* 66.666 %*/
+}
+
+.Column-7 {
+    width: 58.33333333%;
+}
+
+.Column-8 {
+    width: 66.66666667%;
+}
+
+.Column-9 {
+    width: 75%;
+}
+
+.Column-10 {
+    width: 83.33333333%;
+}
+
+.ColumnBig-11 {
+    width: 91.66666667%;
+}
+
+/* Flex Position Content */
+
+.ContentAlignStart {
+    align-items: flex-start;
+}
+
+.ContentAlignEnd {
+    align-items: flex-end;
+}
+
+.ContentAlignStretch {
+    align-items: stretch;
+}
+
+.ContentAlignCenter {
+    align-items: center;
+}
+
+.ContentHorizontalStart {
+    justify-content: flex-start;
+}
+
+.ContentHorizontalEnd {
+    justify-content: flex-end;
+}
+
+.ContentHorizontalCenter {
+    justify-content: center;
+}
+
+.ContentHorizontalSpaceBetween {
+    justify-content: space-between;
+}
+
+.ContentHorizontalSpaceAround {
+    justify-content: space-around;
+}
+
+/* End Flex Position Content*/
+
+/* End Flex */
+
+/* TextAlign */
+
+.TextAlignCenter {
+    text-align: center;
+}
+
+/* End TextAlign */
+
+/* Position */
+
+.Relative {
+    position: relative;
+}
+
+.Fixed {
+    position: fixed;
+}
+
+.Center {
+    position: center;
+}
+
+/* End Position */
+
+/* Display */
+
+.Block {
+    display: block;
+}
+
+/* End Display */
+
+/* Top/Bottom/Left/Right Zero */
+
+.TopZero {
+    top: 0;
+}
+
+.BottomZero {
+    bottom: 0;
+}
+
+.LeftZero {
+    left: 0;
+}
+
+.RightZero {
+    right: 0;
+}
+
+.TopBottomLeftRightZero {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* End Top/Bottom/Left/Right Zero */
+
+/* Padding */
+
+.ZeroPadding {
+    padding: 0px;
+}
+
+.SmallPaddingVertical {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.SmallPadding {
+    padding: 5px;
+}
+
+.NormalPadding {
+    padding: 10px;
+}
+
+.NormalPaddingHorizontal {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.BigPadding {
+    padding: 15px;
+}
+
+/* End Padding*/
+
+/* Margin */
+
+.SmallMargin{
+    margin: 5px;
+}
+
+.SmallMarginTopBottom {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.MarginHorizontalAuto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* End Margin */
+
+/* Effects */
+
+.SmallShadowBlackLight {
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+
+.TextShadow {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.TextShadowLightWhite {
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.TextShadowWhiteNormal {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* End Effects */
+
+/* Border */
+
+.SmallBorderRadius {
+    border-radius: 10%;
+}
+
+.NormalBorderRadius {
+    border-radius: 25%;
+}
+
+.BigBorderRadius {
+    border-radius: 40%;
+}
+
+/* End Border */
+
+/* Overflow */
+
+.OverflowAxisYHidden {
+    overflow-y: hidden;
+}
+
+.OverflowAxisYVisiable {
+    overflow-y: visible;
+}
+
+.OverflowAxisYScroll {
+    overflow-y: scroll;
+}
+
+.OverflowAxisYAuto {
+    overflow-y: auto;
+}
+
+.OverFlowHidden {
+    overflow: hidden;
+}
+
+/* End Overflow */
+
+/* ListStyle */
+
+.ListStyleNone {
+    list-style-type: none;
+}
+
+.ListStyleMarkedCircle {
+    list-style-type: circle;
+}
+.ListStyleMarkedSquare {
+    list-style-type: square;
+}
+
+.ListStyleMarkedPoint {
+    list-style-type: disc;
+}
+
+/* End ListStyle */
+
+/* Link */
+
+/* End Link */
+
+/* TextDecoration */
+
+.TextDecorationNone a {
+    text-decoration: none;
+}
+
+/* End TextDecoration */
+
+/* ZIndex */
+
+.ZIndex1 *{
+    z-index: 1;
+}
+
+/* End ZIndex */
+
+/* Other */
+
+.Container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Components */
+
+.SwipeButton:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+/* End Components */
+
+/* Medias */
+
+/* Large desktops and laptops */
+
+@media screen and (min-width: 2560px) {
+
+    body {
+        width: 2560px;
+        margin: auto;
+    }
+
+    h2 { 
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1.6rem;
+    }
+
+    b {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 2048px) and (max-width: 2559px) {
+
+    body {
+        width: 2400px;
+        margin: auto;
+    }
+
+    h2 { 
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1rem;
+    }
+
+    b {
+        font-size: 1.5rem;
+    }
+
+    [class^="ColumnLarge-"], [class^="ColumnBig-"], [class^="ColumnMedium-"], [class^="ColumnSmall-"] {
+        display: none;
+    }
+
+    .ColumnXL-1 {
+        width: 8.33333333%;
+    }
+
+    .ColumnXL-2 {
+        width: 16.66666667%;
+    }
+
+    .ColumnXL-3 {
+        width: 25%;
+    }
+
+    .ColumnXL-4 {
+        width: 33.33333333%;
+    }
+
+    .ColumnXL-5 {
+        width: 41.66666667%;
+    }
+
+    .ColumnXL-6 {
+        width: 50%;
+    }
+
+    .ColumnXL-7 {
+        width: 58.33333333%;
+    }
+
+    .ColumnXL-8 {
+        width: 66.66666667%;
+    }
+
+    .ColumnXL-9 {
+        width: 75%;
+    }
+
+    .ColumnXL-10 {
+        width: 83.33333333%;
+    }
+
+    .ColumnXL-11 {
+        width: 91.66666667%;
+    }
+
+    .ColumnXL-12 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1920px) and (max-width: 2399px){
+
+    body {
+        width: 1920px;
+        margin: auto;
+    }
+
+    h2 { 
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1.1rem;
+    }
+
+    b {
+        font-size: 1.4rem;
+    }
+
+    [class^="ColumnBig-"], [class^="ColumnMedium-"], [class^="ColumnSmall-"] {
+        display: none;
+    }
+
+    .ColumnLarge-1 {
+        width: 8.33333333%;
+    }
+
+    .ColumnLarge-2 {
+        width: 16.66666667%;
+    }
+
+    .ColumnLarge-3 {
+        width: 25%;
+    }
+
+    .ColumnLarge-4 {
+        width: 33.33333333%;
+    }
+
+    .ColumnLarge-5 {
+        width: 41.66666667%;
+    }
+
+    .ColumnLarge-6 {
+        width: 50%;
+    }
+
+    .ColumnLarge-7 {
+        width: 58.33333333%;
+    }
+
+    .ColumnLarge-8 {
+        width: 66.66666667%;
+    }
+
+    .ColumnLarge-9 {
+        width: 75%;
+    }
+
+    .ColumnLarge-10 {
+        width: 83.33333333%;
+    }
+
+    .ColumnLarge-11 {
+        width: 91.66666667%;
+    }
+
+    .ColumnLarge-12 {
+        width: 100%;
+    }
+}
+
+/* Large desktops and laptops */
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+
+    body {
+        width: 1280px;
+        margin: auto;
+    }
+
+    .InvisibleBig {
+        display: none;
+    }
+
+    [class^="ColumnMedium-"], [class^="ColumnSmall-"] {
+        display: none;
+    }
+
+    .ColumnBig-1 {
+        width: 8.33333333%;
+    }
+
+    .ColumnBig-2 {
+        width: 16.66666667%;
+    }
+
+    .ColumnBig-3 {
+        width: 25%;
+    }
+
+    .ColumnBig-4 {
+        width: 33.33333333%;
+    }
+
+    .ColumnBig-5 {
+        width: 41.66666667%;
+    }
+
+    .ColumnBig-6 {
+        width: 50%;
+    }
+
+    .ColumnBig-7 {
+        width: 58.33333333%;
+    }
+
+    .ColumnBig-8 {
+        width: 66.66666667%;
+    }
+
+    .ColumnBig-9 {
+        width: 75%;
+    }
+
+    .ColumnBig-10 {
+        width: 83.33333333%;
+    }
+
+    .ColumnBig-11 {
+        width: 91.66666667%;
+    }
+
+    .ColumnBig-12 {
+        width: 100%;
+    }
+}
+
+/* Portrait tablets and medium desktops */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+
+    body {
+        width: 992px;
+        margin: auto;
+    }
+
+    .InvisibleMedium {
+        display: none;
+    }
+
+    [class^="ColumnBig-"], [class^="ColumnSmall-"] {
+        display: none;
+    }
+
+    .ColumnMedium-1 {
+        width: 8.33333333%;
+    }
+
+    .ColumnMedium-2 {
+        width: 16.66666667%;
+    }
+
+    .ColumnMedium-3 {
+        width: 25%;
+    }
+
+    .ColumnMedium-4 {
+        width: 33.33333333%;
+    }
+
+    .ColumnMedium-5 {
+        width: 41.66666667%;
+    }
+
+    .ColumnMedium-6 {
+        width: 50%;
+    }
+
+    .ColumnMedium-7 {
+        width: 58.33333333%;
+    }
+
+    .ColumnMedium-8 {
+        width: 66.66666667%;
+    }
+
+    .ColumnMedium-9 {
+        width: 75%;
+    }
+
+    .ColumnMedium-10 {
+        width: 83.33333333%;
+    }
+
+    .ColumnMedium-11 {
+        width: 91.66666667%;
+    }
+
+    .ColumnMedium-12 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 991px) {
+
+    body {
+        width: 800px;
+        margin: auto;
+    }
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (min-width: 768px) and (max-width: 799px) {
+
+    body {
+        width: 768px;
+        margin: auto;
+    }
+
+    .InvisibleSmall {
+        display: none;
+    }
+
+    [class^="ColumnBig-"], [class^="ColumnMedium-"] {
+        display: none;
+    }
+
+    .ColumnSmall-1 {
+        width: 8.33333333%;
+    }
+
+    .ColumnSmall-2 {
+        width: 16.66666667%;
+    }
+
+    .ColumnSmall-3 {
+        width: 25%;
+    }
+
+    .ColumnSmall-4 {
+        width: 33.33333333%;
+    }
+
+    .ColumnSmall-5 {
+        width: 41.66666667%;
+    }
+
+    .ColumnSmall-6 {
+        width: 50%;
+    }
+
+    .ColumnSmall-7 {
+        width: 58.33333333%;
+    }
+
+    .ColumnSmall-8 {
+        width: 66.66666667%;
+    }
+
+    .ColumnSmall-9 {
+        width: 75%;
+    }
+
+    .ColumnSmall-10 {
+        width: 83.33333333%;
+    }
+
+    .ColumnSmall-11 {
+        width: 91.66666667%;
+    }
+
+    .ColumnSmall-12 {
+        width: 100%;
+    }
+
+    .DialogMessage .DateTime {
+        font-size: 0.6rem;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+     body {
+        width: 700px;
+        margin: auto;
+    }
+}
+
+/* End Medias */
+
+/* MaxWidth */
+
+.MaxWidthBig {
+    max-width: 1200px;
+}
+
+.MaxWidthMedium {
+    max-width: 992px;
+}
+
+.MaxWidthSmall {
+    max-width: 768px;
+}
+
+/* End MaxWidth */
+
+/* Custom CSS Styles by valkyrie666 */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 1; /* Firefox */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+/* tags */
+
+i {
+	line-height: 1.5em;
+	font-style: normal;
+}
+
+li {
+	width: 100%;
+	height: 36px;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+/* classes */
+.Avatar{
+	border-radius: 50%;
+	width: 2.8rem;
+	height: 2.8rem;
+	filter: saturate(80%)
+}
+
+a.Button {
+    display: block;
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Button:hover{
+   background: #ababab;
+}
+
+.ChatMenu {
+	width: 200px;
+	right: 0;
+	left: auto;
+}
+
+.DateTime {
+	font-size: 0.8rem;
+	margin: 8px 0;
+}
+
+.Dialog {
+	width: 100%;
+	height: 100%;
+	padding: 7px 16px 7px 16px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+    color: #00000;
+    text-decoration: none;
+}
+
+.Dialog:hover {
+	background: #e6e6e6;
+}
+
+.Dialog .active {
+	background: #cccccc;
+}
+
+.DialogAvatar {
+	height: 100%;
+	margin-right: 15px;
+}
+
+.DialogBox {
+	height: 100%;
+	margin-top: -20px;
+}
+
+.DialogBoxWrapper {
+	position: relative;
+	background: #f2f2f2;
+}
+
+.DialogDisplay {
+	height: 100%;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	overflow-y: scroll;
+}
+
+.DialogElement {
+	min-height: 62px;
+}
+
+.DialogList {
+	height: 100%;
+}
+
+.DialogListWrapper{
+	overflow-y: scroll;
+	height: 88%;
+	padding-top: 20px;
+}
+
+.DialogMessage {
+	width: 100%;
+	height: 4rem;
+	line-height: 8px;
+	min-height: 64px;
+	margin-bottom: 5px;
+}
+
+.DialogPeer{
+	font-size: 13px;
+	margin: 3px 0 3px 0;
+}
+
+.DialogText {
+	font-size: 13px;
+	margin: 5px 0 0 0;
+	text-overflow: ellipsis; 
+}
+
+a.DropdownElement {
+	padding: 11px 19px 11px 21px;
+	width: 100%;
+	line-height: 20px;
+	text-align: left;
+}
+
+a.DropdownElement:hover {
+	background: #e6e6e6;
+}
+
+.DropdownMenu {
+	display: none;
+	z-index: 4;
+	padding: 9px 0 7px;
+	margin: -1px 0 0;
+	border-left-color: #b5c3d0;
+    border-right-color: #b5c3d0;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(15, 60, 96, 0.2);
+}
+
+.Empty {
+    margin: 0 auto;
+    width: 100px;
+    text-align: center;
+}
+
+.Fade {
+	opacity: 0;
+    transition: opacity .15s linear;
+}
+
+.Glyph {
+	  width: auto;
+      height: 100%;
+}
+
+.Header {
+    height: 62px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background: #858585;
+    color: #ffffff;
+    font-size: 1.2rem;
+    line-height: 8px;
+}
+
+.Header a, .Header i {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.Header .DropdownMenu a {
+    color: #424242;
+}
+
+.InnerWrap {
+	margin: 0 auto;
+	height: 100%;
+	max-width: 80%;
+    padding: 0px 15px 0px 15px;
+    word-wrap: break-word;
+    line-height: 20px;
+}
+
+.InputGroup {
+	display: flex;
+}
+
+.InputGroupPrepend {
+	margin-right: -1px;
+	display: flex;
+	height: 30px;
+}
+
+.InputGroupText {
+	border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 5px;
+    background-color: #b7b7b7;
+}
+
+.Main {
+	height: 100%;
+	border-left: rgb(223, 229, 236) 1px solid;
+	border-right: rgb(223, 229, 236) 1px solid;
+	border-bottom: rgb(223, 229, 236) 1px solid;
+}
+
+.MainMenu {
+	width: 100%;
+    left: 0;
+}
+
+.MessageBox {
+	position: absolute;
+	bottom: 2px;
+	width: 100%;
+	padding: 20px 10px;
+	background-color: #f2f2f2;
+}
+
+.MessageWrap {
+	line-height: 1rem;
+}
+
+.Modal {
+	display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+}
+
+.Modal .ModalDialog {
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+.ModalContent {
+	background: white;
+}
+
+.ModalDialog {
+    margin: 30px auto;
+    width: 900px;
+    height: 600px;
+    position: relative;
+}
+
+.ModalHeader {
+	padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.ModalBody {
+    position: relative;
+    padding: 15px;
+}
+
+.ModalFooter {
+	padding: 15px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5;
+}
+
+.PageWrapper {
+	height: 100%;
+	position: relative;
+	background: #ffffff;
+    box-shadow: 0 0 3px #828282; /* Параметры тени */
+}
+
+.SearchFormWrapper {
+	height: 70px;
+	width: 100%;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.SearchInput {
+	height: 35px;
+	border:  #b5b5b5 solid 1px;
+	padding: 6px 12px;
+	width: 100%;
+	background: #b5b5b5;
+}
+
+.SearchInput:focus {
+	border: #969696 solid 1px;
+	background: #ffffff;
+}
+
+.SearchInput:focus::placeholder {
+  opacity: 1;
+}
+
+.Show {
+	display:block;
+}
+
+.SideBar {
+	border-right: rgb(223, 229, 236)  2px solid;
+}
+
+.SideBar, .DialogBoxWrapper {
+	padding-top: 92px;
+}
+
+@media screen and (min-height: 800px) and (max-height: 1920px) {
+	.SideBar, .DialogBoxWrapper {
+		padding-bottom: 1%;
+	}
+
+	.Dialog {
+	    height: 6rem;
+	    padding: 1rem 3rem;
+    }
+
+    .DialogMessage {
+    	height: 6rem;
+	    padding: 2rem 3rem;
+    }
+}
+
+@media screen and (min-height: 401px) and  (max-height: 799px){
+	.SideBar, .DialogBoxWrapper {
+		padding-bottom: 6%;
+	}
+}
+
+@media screen and (min-height: 281px) and  (max-height: 401px){
+	.SideBar, .DialogBoxWrapper {
+		padding-bottom: 8%;
+	}
+}
+
+@media screen and (min-height: 280px) and  (max-height: 399px){
+	.SideBar, .DialogBoxWrapper {
+		padding-bottom: 10%;
+	}
+}
+
+
+@media screen and (min-height: 0) and  (max-height: 280px){
+	.SideBar, .DialogBoxWrapper {
+		display: none;
+	}
+}
+
+/* form styles */
+
+.inp {
+  position: relative;
+  margin: auto;
+  max-width: 280px;
+}
+.inp .label {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 16px;
+  color: #9098a9;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
+}
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #07f;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
+.inp input {
+  -webkit-appearance: none;
+  width: 80%;
+  border: 0;
+  font-family: inherit;
+  padding: 12px 12px 0 12px ;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #c8ccd4;
+  background: none;
+  border-radius: 0;
+  color: #223254;
+  transition: all 0.15s ease;
+}
+.inp input:hover {
+  background-color: #f2f2f2;
+}
+.inp input:not(:placeholder-shown) + span {
+  color: #5a667f;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus {
+  outline: none;
+}
+.inp input:focus + span {
+  color: #07f;
+  transform: translateY(-26px) scale(0.75);
+}
+.inp input:focus + span + .border {
+  transform: scaleX(0);
+}
+
+.FullHeight {
+	height: 100%;
+}
+
