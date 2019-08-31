@@ -838,10 +838,6 @@ a.Button {
 	background: #e6e6e6;
 }
 
-.Dialog .active {
-	background: #cccccc;
-}
-
 .DialogAvatar {
 	height: 100%;
 	margin-right: 15px;
@@ -1013,12 +1009,31 @@ a.DropdownElement:hover {
     left: 0;
 }
 
+.Message {
+    height: auto;
+    width: 100%;
+    padding: 5px;
+}
+
+.Message:hover {
+    background: #e6e6e6;
+}
+
+.MessageInner {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .MessageBox {
 	position: absolute;
 	bottom: 2px;
 	width: 100%;
 	padding: 20px 10px;
 	background-color: #f2f2f2;
+}
+
+.MessageText {
+    text-align: justify;
 }
 
 .MessageWrap {
@@ -1102,6 +1117,22 @@ a.DropdownElement:hover {
   opacity: 1;
 }
 
+.SendButton {
+    height: 100%;
+    background: transparent;
+    min-height: 34px;
+    margin: 0 6px;
+    width: 14%;
+    border: none;
+    color: #858585;
+    font: 3rem;
+}
+
+.SendButton:hover {
+    cursor: pointer;
+    color: black;
+}
+
 .Show {
 	display:block;
 }
@@ -1112,6 +1143,10 @@ a.DropdownElement:hover {
 
 .SideBar, .DialogBoxWrapper {
 	padding-top: 92px;
+}
+
+.Timestamp {
+    text-align: right;
 }
 
 @media screen and (min-height: 800px) and (max-height: 1920px) {
@@ -1220,29 +1255,6 @@ a.DropdownElement:hover {
 	height: 100%;
 }
 
-.send-button {
-    height: 100%;
-    background: #858585;
-    border: solid 1px;
-    min-height: 34px;
-    margin: 0 4px;
-    width: 10%
-}
-
-.send-button:hover {
-    background: #ababab;
-}
-
-.message-item {
-    height: auto;
-    margin: 20px auto;
-    width: 90%;
-    padding: 5px;
-}
-
-.message-item:hover {
-    background: #ababab;
-}
 
 
 

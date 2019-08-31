@@ -8,28 +8,27 @@ var createReactClass = require('create-react-class');
 var Message = createReactClass({
   render: function () {
     return(
-      <div className="message-item">
-        <div className="Row">
+      <div className="Message">
+        <div className="Row MessageInner">
           <div className="Column ZeroPadding DialogAvatar">
             <img className="Avatar" src={this.props.image} alt={this.props.username} />
           </div>
-          <div className="Column-9 ZeroPadding MessageWrap">
+          <div className="Column-10 ZeroPadding MessageWrap">
             <div className="DialogPeer">
-                    <span><b>{this.props.name}</b></span>
-                  </div>
-                  <div className="DialogPeer MessageText">
-                    <p>{this.props.text}</p>
-                  </div>
+              <span><b>{this.props.name}</b></span>
+            </div>
+            <div className="DialogPeer MessageText">
+              <p>{this.props.text}</p>
+            </div>
           </div>
-          <div className="Column-2 FullHeight">
-                  <span className="DateTime">00:00</span>
-                </div>
+          <div className="Column FullHeight Timestamp BigPadding">
+            <span className="DateTime">00:00</span>
+          </div>
         </div>
       </div>
     );
   }
 })
-
 
 var DialogBox = createReactClass({
 
@@ -65,8 +64,8 @@ var DialogBox = createReactClass({
               <span className="label">Type message here...</span>
               <span className="border"></span>
             </label>
-            <button className="send-button">
-            send
+            <button className="SendButton">
+            SEND
             </button>
             </form>
           </div>

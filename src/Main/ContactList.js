@@ -1,6 +1,7 @@
 import React from 'react';
 import dialogs from '../json/dialogs.json'
 import { Link } from 'react-router-dom';
+import DialogBox from './DialogBox';
 
 var createReactClass = require('create-react-class');
 
@@ -13,7 +14,7 @@ var Contact = createReactClass({
 		return ( 
 			
 		<li className="DialogElement" key={this.props.username}>
-		<Link to={`/dialog/${this.props.username}`}>
+		<Link to={`/dialog/${this.props.username}`} onClick="">
 		  <div className="Dialog">
 		    <div className="Row">
 		      <div className="Column ZeroPadding DialogAvatar">
@@ -32,9 +33,8 @@ var Contact = createReactClass({
               </div>
 		    </div>
 		  </div>
-		  </Link>
+		 </Link>
 		</li>
-		
 		);
 	}
 })
