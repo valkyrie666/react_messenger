@@ -1,0 +1,35 @@
+[
+	{
+		"id": "000000001",
+		"dialog_id": "000000001",
+		"user": {
+			"name": "Darth Vader",
+			"username": "darthvader",
+			"image": "https://plamoya.com/bmz_cache/6/68b4c262199124941280f57f771ee79f.image.500x500.jpg"
+		},
+		"text": "hello!",
+		"timestamp": "00:00"
+	},
+	{
+		"id": "000000002",
+		"dialog_id": "000000001",
+		"user": {
+			"name": "Darth Vader",
+			"username": "darthvader",
+			"image": "https://plamoya.com/bmz_cache/6/68b4c262199124941280f57f771ee79f.image.500x500.jpg"
+		},
+		"text": "test",
+		"timestamp": "00:00"
+	},
+	{
+		"id": "000000003",
+		"dialog_id": "000000002",
+		"user": {
+			"username": "princess_leia",
+			"name": "Princess Leia",
+			"image": "https://cdn.shopify.com/s/files/1/0018/8488/0957/products/Princess_Leia_grande.jpg?v=1527062625"
+		},
+		"text": "test",
+		"timestamp": "00:00"
+	}
+]

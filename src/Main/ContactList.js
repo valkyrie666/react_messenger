@@ -1,5 +1,5 @@
 import React from 'react';
-import dialogs from './dialogs.json'
+import dialogs from '../json/dialogs.json'
 import { Link } from 'react-router-dom';
 
 var createReactClass = require('create-react-class');

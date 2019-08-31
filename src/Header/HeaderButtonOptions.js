@@ -9,7 +9,7 @@ export default function HeaderButtonOptions() {
 
 	return (
 		<div className="Column-1 ZeroPadding FullHeight">
-          <a className="Button BigPadding DropdownBtn" href="" onClick={toggleDropdown}>
+          <a className="Button BigPadding DropdownBtn" href="#" onClick={toggleDropdown}>
             <img src="img/dots-white.png" className="Glyph" alt="Options" />
           </a>
           <ul className="DropdownMenu ChatMenu" id="OptionsDrop">

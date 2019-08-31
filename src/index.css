@@ -17,32 +17,6 @@ html, body {
     box-sizing:border-box;
 }
 
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-thumb{
-    border-width:1px 1px 1px 2px;
-    border-color: #777;
-    background-color: #aaa;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    border-width: 1px 1px 1px 2px;
-    border-color: #555;
-    background-color: #777;
-}
-
-::-webkit-scrollbar-track{
-    border-width:0;
-}
-
-::-webkit-scrollbar-track:hover{
-    border-left: solid 1px #aaa;
-    background-color: #eee;
-}
-
 /* Flex */
 
 .Row, .RowRevers, .Column, .ColumnRevers {
@@ -876,7 +850,24 @@ a.Button {
 .DialogBox {
 	height: 100%;
 	margin-top: -20px;
+    overflow-y: scroll;
+    background-color: #F5F5F5;
 }
+
+.force-overflow::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.force-overflow::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+.force-overflow::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
 
 .DialogBoxWrapper {
 	position: relative;
@@ -1228,4 +1219,30 @@ a.DropdownElement:hover {
 .FullHeight {
 	height: 100%;
 }
+
+.send-button {
+    height: 100%;
+    background: #858585;
+    border: solid 1px;
+    min-height: 34px;
+    margin: 0 4px;
+    width: 10%
+}
+
+.send-button:hover {
+    background: #ababab;
+}
+
+.message-item {
+    height: auto;
+    margin: 20px auto;
+    width: 90%;
+    padding: 5px;
+}
+
+.message-item:hover {
+    background: #ababab;
+}
+
+
 
