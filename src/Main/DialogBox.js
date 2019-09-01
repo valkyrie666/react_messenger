@@ -2,6 +2,7 @@ import React from 'react';
 import messages from '../json/messages.json';
 
 var MESSAGES = messages;
+let ID = 4;
 
 var createReactClass = require('create-react-class');
 
@@ -9,68 +10,92 @@ var Message = createReactClass({
   render: function () {
     return(
       <div className="Message">
-        <div className="Row MessageInner">
-          <div className="Column ZeroPadding DialogAvatar">
-            <img className="Avatar" src={this.props.image} alt={this.props.username} />
-          </div>
-          <div className="Column-10 ZeroPadding MessageWrap">
-            <div className="DialogPeer">
-              <span><b>{this.props.name}</b></span>
-            </div>
-            <div className="DialogPeer MessageText">
-              <p>{this.props.text}</p>
-            </div>
-          </div>
-          <div className="Column FullHeight Timestamp BigPadding">
-            <span className="DateTime">00:00</span>
-          </div>
-        </div>
+      <div className="Row MessageInner">
+      <div className="Column ZeroPadding DialogAvatar">
+      <img className="Avatar" src={this.props.image} alt={this.props.username} />
       </div>
-    );
-  }
-})
+      <div className="Column-10 ZeroPadding MessageWrap">
+      <div className="DialogPeer">
+      <span><b>{this.props.name}</b></span>
+      </div>
+      <div className="DialogPeer MessageText">
+      <p>{this.props.text}</p>
+      </div>
+      </div>
+      <div className="Column FullHeight Timestamp BigPadding">
+      <span className="DateTime">00:00</span>
+      </div>
+      </div>
+      </div>
+      );
+    }
+  })
 
-var DialogBox = createReactClass({
+  var DialogBox = createReactClass({
 
-  getInitialState: function() {
-    return {
-      displayedMessages: MESSAGES
-    };
-  },
+    generateMessageId: function(){
+      return String(ID++);
+    },
 
-	 render: function()  {
+    getInitialState: function() {
+      return {
+        displayedMessages: MESSAGES,
+        inputValue: "",
+        originContact: {
+          user: {
+            name: "Darth Vader",
+            username: "darthvader",
+            image: "https://plamoya.com/bmz_cache/6/68b4c262199124941280f57f771ee79f.image.500x500.jpg"
+          },
+          timestamp: "00:00"
+        },
+      };
+    },
 
-    return (
-		<div className="Column-9 ZeroPadding DialogBoxWrapper">
+    handleInputSend: function(event){
+      const message = {
+        ...this.state.originContact,
+        id: this.generateMessageId(),
+        text: this.state.inputValue,
+        dialog_id: this.props.selected_dialog_id
+      };
+      this.props.handleMessageInput(message);
+      this.setState({inputValue: ""});
+    },
 
-		  <div className="DialogBox ZeroPadding force-overflow">
-        {
-            this.state.displayedMessages.map(function(el){
-               return <Message key={el.id} name={el.user.name} username={el.user.username}
-            image={el.user.image} text={el.text} username={el.user.username} />;
-           })
-        }
-		  </div>
+    handleInput: function(event){
+      this.setState({inputValue: event.currentTarget.value});
+    },
 
-		  <div className="MessageBox TextAlignCenter">
-      <form>
-		    <label htmlFor="text" className="inp">
-              <input type="text" id="text" placeholder="&nbsp;" />
+    render: function()  {
+      const {messages, handleMessageInput} = this.props;
 
-              <input type="hidden" id="dialog_id" value="1" />
-              <input type="hidden" id="from" value="Kseniya" />
-              <input type="hidden" id="to" value="" />
+      return (
+      <div className="Column-9 ZeroPadding DialogBoxWrapper">
 
-              <span className="label">Type message here...</span>
-              <span className="border"></span>
-            </label>
-            <button className="SendButton">
-            SEND
-            </button>
-            </form>
-          </div>
-		</div>
-	)}
-});
+      <div className="DialogBox ZeroPadding force-overflow">
+      {
+        messages.map(function(el){
+         return <Message key={el.id} name={el.user.name} username={el.user.username}
+         image={el.user.image} text={el.text} username={el.user.username} />;
+       })
+     }
+     </div>
 
-export default DialogBox;
+     <div className="MessageBox TextAlignCenter">
+
+     <label htmlFor="text" className="inp">
+     <input type="text" id="text" placeholder="&nbsp;" onChange={this.handleInput} value={this.state.inputValue} />
+
+     <span className="label">Type message here...</span>
+     <span className="border"></span>
+     </label>
+     <button className="SendButton" onClick={this.handleInputSend}>
+     SEND
+     </button>
+     </div>
+     </div>
+     )}
+   });
+
+   export default DialogBox;

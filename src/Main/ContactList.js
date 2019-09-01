@@ -11,10 +11,12 @@ var CONTACTS = dialogs;
 var Contact = createReactClass({
 	render: function () {
 
+		const {handleChangeDialogId, selected} = this.props;
+
 		return ( 
 			
 		<li className="DialogElement" key={this.props.username}>
-		<Link to={`/dialog/${this.props.username}`} onClick="">
+		<Link to={`/dialog/${this.props.id}`} onClick={handleChangeDialogId(this.props.id)}>
 		  <div className="Dialog">
 		    <div className="Row">
 		      <div className="Column ZeroPadding DialogAvatar">
@@ -41,37 +43,43 @@ var Contact = createReactClass({
 
 var ContactList = createReactClass({
 
-	getInitialState: function() {
+    getInitialState: function() {
 		return {
-			displayedContacts: CONTACTS
+			searchQuery: "",
 		};
 	},
 
     handleSearch: function(event) {
     	var searchQuery = event.target.value.toLowerCase();
-    	var displayedContacts  = CONTACTS.filter(function(el) {
-    		var searchValue = el.name.toLowerCase();
-    		return searchValue.indexOf(searchQuery) !== -1;
-    	});
 
     	this.setState({
-    		displayedContacts: displayedContacts
+    		searchQuery: searchQuery,
+    	});
+	},
+
+	filterBySearch: function(searchQuery, contacts){
+		return contacts.filter(function(el) {
+    		var searchValue = el.name.toLowerCase();
+    		return searchValue.indexOf(searchQuery) !== -1;
     	});
 	},
 
 	 render: function() {
+	 	const {dialogs, handleChangeDialogId, selected} = this.props;
+	 	const {searchQuery} = this.state;
+
+	 	const displayedContacts = this.filterBySearch(searchQuery, dialogs);
 		return(
 		  <div className="FullHeight">
-			<div className="SearchFormWrapper">
-              <input type="text" onChange={this.handleSearch} className="SearchInput" placeholder="search..." />
-            </div>
-
+		  <div className="SearchFormWrapper">
+		  <input type="text" onChange={this.handleSearch} className="SearchInput" placeholder="search..." />
+          </div>
 			<div className="DialogListWrapper">
 			  <ul className="DialogList">
 			     {
-			  	    this.state.displayedContacts.map(function(el){
+			  	    displayedContacts.map(function(el){
 			  		return <Contact key={el.username} name={el.name} username={el.username}
-			  		phoneNumber={el.phoneNumber} image={el.image} />;
+			  		phoneNumber={el.phoneNumber} image={el.image} id={el.dialog_id} handleChangeDialogId={handleChangeDialogId} selected={selected} />;
 			  	 })
 			  }
 			  </ul>
